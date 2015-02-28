@@ -1,0 +1,38 @@
+C:\Users\Mikey\Documents\Visual Studio 11\Projects\JScript vsdoc Stub Generator 11\JScriptStubOptions\bin\Release\JScriptStubOptions.dll
+C:\Users\Mikey\Documents\Visual Studio 11\Projects\JScript vsdoc Stub Generator 11\JScriptStubOptions\bin\Release\JScriptStubOptions.pdb
+C:\Users\Mikey\Documents\Visual Studio 11\Projects\JScript vsdoc Stub Generator 11\JScriptStubOptions\bin\Release\JScriptStubOptions.dll.CodeAnalysisLog.xml
+C:\Users\Mikey\Documents\Visual Studio 11\Projects\JScript vsdoc Stub Generator 11\JScriptStubOptions\bin\Release\JScriptStubOptions.dll.lastcodeanalysissucceeded
+C:\Users\Mikey\Documents\Visual Studio 11\Projects\JScript vsdoc Stub Generator 11\JScriptStubOptions\bin\Release\JScriptStubOptions.pkgdef
+C:\Users\Mikey\Documents\Visual Studio 11\Projects\JScript vsdoc Stub Generator 11\JScriptStubOptions\bin\Release\JScriptStubOptions.vsix
+C:\Users\Mikey\Documents\Visual Studio 11\Projects\JScript vsdoc Stub Generator 11\JScriptStubOptions\bin\Release\extension.vsixmanifest
+C:\Users\Mikey\Documents\Visual Studio 11\Projects\JScript vsdoc Stub Generator 11\JScriptStubOptions\bin\Release\Microsoft.VisualStudio.Settings.11.0.dll
+C:\Users\Mikey\Documents\Visual Studio 11\Projects\JScript vsdoc Stub Generator 11\JScriptStubOptions\bin\Release\Microsoft.VisualStudio.Settings.11.0.xml
+C:\Users\Mikey\Documents\Visual Studio 11\Projects\JScript vsdoc Stub Generator 11\JScriptStubOptions\obj\Release\JScriptStubOptions.csproj.ResolveComReference.cache
+C:\Users\Mikey\Documents\Visual Studio 11\Projects\JScript vsdoc Stub Generator 11\JScriptStubOptions\obj\Release\VSPackage.resources
+C:\Users\Mikey\Documents\Visual Studio 11\Projects\JScript vsdoc Stub Generator 11\JScriptStubOptions\obj\Release\JScriptStubOptions.Resources.resources
+C:\Users\Mikey\Documents\Visual Studio 11\Projects\JScript vsdoc Stub Generator 11\JScriptStubOptions\obj\Release\JScriptStubOptions.csproj.GenerateResource.Cache
+C:\Users\Mikey\Documents\Visual Studio 11\Projects\JScript vsdoc Stub Generator 11\JScriptStubOptions\obj\Release\JScriptStubOptions.dll
+C:\Users\Mikey\Documents\Visual Studio 11\Projects\JScript vsdoc Stub Generator 11\JScriptStubOptions\obj\Release\JScriptStubOptions.pdb
+C:\Users\Mikey\Documents\Visual Studio 11\Projects\JScript vsdoc Stub Generator 11\JScriptStubOptions\obj\Release\JScriptStubOptions.pkgdef
+C:\Users\Mikey\Documents\Visual Studio 11\Projects\JScript vsdoc Stub Generator 11\JScriptStubOptions\obj\Release\JScriptStubOptions.latest.pkgdef
+C:\Users\Mikey\Documents\Visual Studio 11\Projects\JScript vsdoc Stub Generator 11\JScriptStubOptions\obj\Release\extension.vsixmanifest
+C:\Users\Mikey\Documents\Visual Studio 11\Projects\JScript vsdoc Stub Generator 11\JScriptStubOptions\obj\Release\JScriptStubOptions.csprojResolveAssemblyReference.cache
+C:\Users\Mikey\Documents\Projects\JScript vsdoc Stub Generator 11\JScriptStubOptions\bin\Release\JScriptStubOptions.dll
+C:\Users\Mikey\Documents\Projects\JScript vsdoc Stub Generator 11\JScriptStubOptions\bin\Release\JScriptStubOptions.pdb
+C:\Users\Mikey\Documents\Projects\JScript vsdoc Stub Generator 11\JScriptStubOptions\bin\Release\JScriptStubOptions.dll.CodeAnalysisLog.xml
+C:\Users\Mikey\Documents\Projects\JScript vsdoc Stub Generator 11\JScriptStubOptions\bin\Release\JScriptStubOptions.dll.lastcodeanalysissucceeded
+C:\Users\Mikey\Documents\Projects\JScript vsdoc Stub Generator 11\JScriptStubOptions\bin\Release\JScriptStubOptions.pkgdef
+C:\Users\Mikey\Documents\Projects\JScript vsdoc Stub Generator 11\JScriptStubOptions\bin\Release\JScriptStubOptions.vsix
+C:\Users\Mikey\Documents\Projects\JScript vsdoc Stub Generator 11\JScriptStubOptions\bin\Release\extension.vsixmanifest
+C:\Users\Mikey\Documents\Projects\JScript vsdoc Stub Generator 11\JScriptStubOptions\bin\Release\Microsoft.VisualStudio.Settings.11.0.dll
+C:\Users\Mikey\Documents\Projects\JScript vsdoc Stub Generator 11\JScriptStubOptions\bin\Release\Microsoft.VisualStudio.Settings.11.0.xml
+C:\Users\Mikey\Documents\Projects\JScript vsdoc Stub Generator 11\JScriptStubOptions\obj\Release\JScriptStubOptions.csprojResolveAssemblyReference.cache
+C:\Users\Mikey\Documents\Projects\JScript vsdoc Stub Generator 11\JScriptStubOptions\obj\Release\JScriptStubOptions.csproj.ResolveComReference.cache
+C:\Users\Mikey\Documents\Projects\JScript vsdoc Stub Generator 11\JScriptStubOptions\obj\Release\VSPackage.resources
+C:\Users\Mikey\Documents\Projects\JScript vsdoc Stub Generator 11\JScriptStubOptions\obj\Release\JScriptStubOptions.Resources.resources
+C:\Users\Mikey\Documents\Projects\JScript vsdoc Stub Generator 11\JScriptStubOptions\obj\Release\JScriptStubOptions.csproj.GenerateResource.Cache
+C:\Users\Mikey\Documents\Projects\JScript vsdoc Stub Generator 11\JScriptStubOptions\obj\Release\JScriptStubOptions.dll
+C:\Users\Mikey\Documents\Projects\JScript vsdoc Stub Generator 11\JScriptStubOptions\obj\Release\JScriptStubOptions.pdb
+C:\Users\Mikey\Documents\Projects\JScript vsdoc Stub Generator 11\JScriptStubOptions\obj\Release\JScriptStubOptions.pkgdef
+C:\Users\Mikey\Documents\Projects\JScript vsdoc Stub Generator 11\JScriptStubOptions\obj\Release\JScriptStubOptions.latest.pkgdef
+C:\Users\Mikey\Documents\Projects\JScript vsdoc Stub Generator 11\JScriptStubOptions\obj\Release\extension.vsixmanifest

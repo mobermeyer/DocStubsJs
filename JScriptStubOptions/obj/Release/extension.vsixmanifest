@@ -1,0 +1,17 @@
+<PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011">
+  <Metadata>
+    <Identity Id="5faf6911-0879-4057-adc1-b8c9575af159" Version="1.0" Language="en-US" Publisher="Michael Obermeyer, Jr." />
+    <DisplayName>JScriptStubOptions</DisplayName>
+    <Description>Provides a way to make customizeable options for the JScript vsdoc Stub Generator.</Description>
+  </Metadata>
+  <Installation InstalledByMsi="false">
+    <InstallationTarget Id="Microsoft.VisualStudio.Pro" Version="[11.0,14.0]" />
+  </Installation>
+  <Dependencies>
+    <Dependency Id="Microsoft.Framework.NDP" DisplayName="Microsoft .NET Framework" Version="4.5" />
+    <Dependency Id="Microsoft.VisualStudio.MPF.11.0" DisplayName="Visual Studio MPF 11.0" Version="11.0" />
+  </Dependencies>
+  <Assets>
+    <Asset Type="Microsoft.VisualStudio.VsPackage" Path="JScriptStubOptions.pkgdef" />
+  </Assets>
+</PackageManifest>

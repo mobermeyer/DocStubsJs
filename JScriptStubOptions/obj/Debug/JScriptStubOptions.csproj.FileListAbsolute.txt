@@ -1,0 +1,34 @@
+C:\Users\Mikey\Documents\Visual Studio 11\Projects\JScript vsdoc Stub Generator 11\JScriptStubOptions\bin\Debug\JScriptStubOptions.dll
+C:\Users\Mikey\Documents\Visual Studio 11\Projects\JScript vsdoc Stub Generator 11\JScriptStubOptions\bin\Debug\JScriptStubOptions.pdb
+C:\Users\Mikey\Documents\Visual Studio 11\Projects\JScript vsdoc Stub Generator 11\JScriptStubOptions\bin\Debug\JScriptStubOptions.pkgdef
+C:\Users\Mikey\Documents\Visual Studio 11\Projects\JScript vsdoc Stub Generator 11\JScriptStubOptions\bin\Debug\JScriptStubOptions.vsix
+C:\Users\Mikey\Documents\Visual Studio 11\Projects\JScript vsdoc Stub Generator 11\JScriptStubOptions\bin\Debug\extension.vsixmanifest
+C:\Users\Mikey\Documents\Visual Studio 11\Projects\JScript vsdoc Stub Generator 11\JScriptStubOptions\obj\Debug\JScriptStubOptions.csprojResolveAssemblyReference.cache
+C:\Users\Mikey\Documents\Visual Studio 11\Projects\JScript vsdoc Stub Generator 11\JScriptStubOptions\obj\Debug\JScriptStubOptions.csproj.ResolveComReference.cache
+C:\Users\Mikey\Documents\Visual Studio 11\Projects\JScript vsdoc Stub Generator 11\JScriptStubOptions\obj\Debug\VSPackage.resources
+C:\Users\Mikey\Documents\Visual Studio 11\Projects\JScript vsdoc Stub Generator 11\JScriptStubOptions\obj\Debug\JScriptStubOptions.csproj.GenerateResource.Cache
+C:\Users\Mikey\Documents\Visual Studio 11\Projects\JScript vsdoc Stub Generator 11\JScriptStubOptions\obj\Debug\JScriptStubOptions.dll
+C:\Users\Mikey\Documents\Visual Studio 11\Projects\JScript vsdoc Stub Generator 11\JScriptStubOptions\obj\Debug\JScriptStubOptions.pdb
+C:\Users\Mikey\Documents\Visual Studio 11\Projects\JScript vsdoc Stub Generator 11\JScriptStubOptions\obj\Debug\JScriptStubOptions.pkgdef
+C:\Users\Mikey\Documents\Visual Studio 11\Projects\JScript vsdoc Stub Generator 11\JScriptStubOptions\obj\Debug\JScriptStubOptions.latest.pkgdef
+C:\Users\Mikey\Documents\Visual Studio 11\Projects\JScript vsdoc Stub Generator 11\JScriptStubOptions\obj\Debug\extension.vsixmanifest
+C:\Users\Mikey\Documents\Visual Studio 11\Projects\JScript vsdoc Stub Generator 11\JScriptStubOptions\obj\Debug\JScriptStubOptions.Resources.resources
+C:\Users\Mikey\Documents\Visual Studio 11\Projects\JScript vsdoc Stub Generator 11\JScriptStubOptions\bin\Debug\Microsoft.VisualStudio.Settings.11.0.dll
+C:\Users\Mikey\Documents\Visual Studio 11\Projects\JScript vsdoc Stub Generator 11\JScriptStubOptions\bin\Debug\Microsoft.VisualStudio.Settings.11.0.xml
+C:\Users\Mikey\Documents\Projects\JScript vsdoc Stub Generator 11\JScriptStubOptions\bin\Debug\JScriptStubOptions.dll
+C:\Users\Mikey\Documents\Projects\JScript vsdoc Stub Generator 11\JScriptStubOptions\bin\Debug\JScriptStubOptions.pdb
+C:\Users\Mikey\Documents\Projects\JScript vsdoc Stub Generator 11\JScriptStubOptions\bin\Debug\JScriptStubOptions.pkgdef
+C:\Users\Mikey\Documents\Projects\JScript vsdoc Stub Generator 11\JScriptStubOptions\bin\Debug\JScriptStubOptions.vsix
+C:\Users\Mikey\Documents\Projects\JScript vsdoc Stub Generator 11\JScriptStubOptions\bin\Debug\extension.vsixmanifest
+C:\Users\Mikey\Documents\Projects\JScript vsdoc Stub Generator 11\JScriptStubOptions\bin\Debug\Microsoft.VisualStudio.Settings.11.0.dll
+C:\Users\Mikey\Documents\Projects\JScript vsdoc Stub Generator 11\JScriptStubOptions\bin\Debug\Microsoft.VisualStudio.Settings.11.0.xml
+C:\Users\Mikey\Documents\Projects\JScript vsdoc Stub Generator 11\JScriptStubOptions\obj\Debug\JScriptStubOptions.csprojResolveAssemblyReference.cache
+C:\Users\Mikey\Documents\Projects\JScript vsdoc Stub Generator 11\JScriptStubOptions\obj\Debug\JScriptStubOptions.csproj.ResolveComReference.cache
+C:\Users\Mikey\Documents\Projects\JScript vsdoc Stub Generator 11\JScriptStubOptions\obj\Debug\VSPackage.resources
+C:\Users\Mikey\Documents\Projects\JScript vsdoc Stub Generator 11\JScriptStubOptions\obj\Debug\JScriptStubOptions.Resources.resources
+C:\Users\Mikey\Documents\Projects\JScript vsdoc Stub Generator 11\JScriptStubOptions\obj\Debug\JScriptStubOptions.csproj.GenerateResource.Cache
+C:\Users\Mikey\Documents\Projects\JScript vsdoc Stub Generator 11\JScriptStubOptions\obj\Debug\JScriptStubOptions.dll
+C:\Users\Mikey\Documents\Projects\JScript vsdoc Stub Generator 11\JScriptStubOptions\obj\Debug\JScriptStubOptions.pdb
+C:\Users\Mikey\Documents\Projects\JScript vsdoc Stub Generator 11\JScriptStubOptions\obj\Debug\JScriptStubOptions.pkgdef
+C:\Users\Mikey\Documents\Projects\JScript vsdoc Stub Generator 11\JScriptStubOptions\obj\Debug\JScriptStubOptions.latest.pkgdef
+C:\Users\Mikey\Documents\Projects\JScript vsdoc Stub Generator 11\JScriptStubOptions\obj\Debug\extension.vsixmanifest

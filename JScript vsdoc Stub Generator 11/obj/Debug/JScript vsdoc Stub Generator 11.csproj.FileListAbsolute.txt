@@ -1,0 +1,26 @@
+C:\Users\Mikey\Documents\Visual Studio 11\Projects\JScript vsdoc Stub Generator 11\JScript vsdoc Stub Generator 11\obj\Debug\JScript vsdoc Stub Generator 11.csprojResolveAssemblyReference.cache
+C:\Users\Mikey\Documents\Visual Studio 11\Projects\JScript vsdoc Stub Generator 11\JScript vsdoc Stub Generator 11\bin\Debug\JScript vsdoc Stub Generator 11.dll
+C:\Users\Mikey\Documents\Visual Studio 11\Projects\JScript vsdoc Stub Generator 11\JScript vsdoc Stub Generator 11\bin\Debug\JScript vsdoc Stub Generator 11.pdb
+C:\Users\Mikey\Documents\Visual Studio 11\Projects\JScript vsdoc Stub Generator 11\JScript vsdoc Stub Generator 11\obj\Debug\JScript vsdoc Stub Generator 11.dll
+C:\Users\Mikey\Documents\Visual Studio 11\Projects\JScript vsdoc Stub Generator 11\JScript vsdoc Stub Generator 11\obj\Debug\JScript vsdoc Stub Generator 11.pdb
+C:\Users\Mikey\Documents\Visual Studio 11\Projects\JScript vsdoc Stub Generator 11\JScript vsdoc Stub Generator 11\bin\Debug\JScript vsdoc Stub Generator 11.vsix
+C:\Users\Mikey\Documents\Visual Studio 11\Projects\JScript vsdoc Stub Generator 11\JScript vsdoc Stub Generator 11\bin\Debug\extension.vsixmanifest
+C:\Users\Mikey\Documents\Visual Studio 11\Projects\JScript vsdoc Stub Generator 11\JScript vsdoc Stub Generator 11\obj\Debug\extension.vsixmanifest
+C:\Users\Mikey\Documents\Visual Studio 11\Projects\JScript vsdoc Stub Generator 11\JScript vsdoc Stub Generator 11\bin\Debug\vsdocExtensionScreen2.PNG
+C:\Users\Mikey\Documents\Visual Studio 11\Projects\JScript vsdoc Stub Generator 11\JScript vsdoc Stub Generator 11\bin\Debug\JScriptStubOptions.dll
+C:\Users\Mikey\Documents\Visual Studio 11\Projects\JScript vsdoc Stub Generator 11\JScript vsdoc Stub Generator 11\bin\Debug\JScriptStubOptions.pdb
+C:\Users\Mikey\Documents\Visual Studio 11\Projects\JScript vsdoc Stub Generator 11\JScript vsdoc Stub Generator 11\bin\Debug\Microsoft.VisualStudio.Settings.11.0.dll
+C:\Users\Mikey\Documents\Visual Studio 11\Projects\JScript vsdoc Stub Generator 11\JScript vsdoc Stub Generator 11\bin\Debug\Microsoft.VisualStudio.Settings.11.0.xml
+C:\Users\Mikey\Documents\Projects\JScript vsdoc Stub Generator 11\JScript vsdoc Stub Generator 11\bin\Debug\vsdocExtensionScreen2.PNG
+C:\Users\Mikey\Documents\Projects\JScript vsdoc Stub Generator 11\JScript vsdoc Stub Generator 11\bin\Debug\JScript vsdoc Stub Generator 11.dll
+C:\Users\Mikey\Documents\Projects\JScript vsdoc Stub Generator 11\JScript vsdoc Stub Generator 11\bin\Debug\JScript vsdoc Stub Generator 11.pdb
+C:\Users\Mikey\Documents\Projects\JScript vsdoc Stub Generator 11\JScript vsdoc Stub Generator 11\bin\Debug\JScript vsdoc Stub Generator 11.vsix
+C:\Users\Mikey\Documents\Projects\JScript vsdoc Stub Generator 11\JScript vsdoc Stub Generator 11\bin\Debug\extension.vsixmanifest
+C:\Users\Mikey\Documents\Projects\JScript vsdoc Stub Generator 11\JScript vsdoc Stub Generator 11\bin\Debug\JScriptStubOptions.dll
+C:\Users\Mikey\Documents\Projects\JScript vsdoc Stub Generator 11\JScript vsdoc Stub Generator 11\bin\Debug\Microsoft.VisualStudio.Settings.11.0.dll
+C:\Users\Mikey\Documents\Projects\JScript vsdoc Stub Generator 11\JScript vsdoc Stub Generator 11\bin\Debug\JScriptStubOptions.pdb
+C:\Users\Mikey\Documents\Projects\JScript vsdoc Stub Generator 11\JScript vsdoc Stub Generator 11\bin\Debug\Microsoft.VisualStudio.Settings.11.0.xml
+C:\Users\Mikey\Documents\Projects\JScript vsdoc Stub Generator 11\JScript vsdoc Stub Generator 11\obj\Debug\JScript vsdoc Stub Generator 11.csprojResolveAssemblyReference.cache
+C:\Users\Mikey\Documents\Projects\JScript vsdoc Stub Generator 11\JScript vsdoc Stub Generator 11\obj\Debug\JScript vsdoc Stub Generator 11.dll
+C:\Users\Mikey\Documents\Projects\JScript vsdoc Stub Generator 11\JScript vsdoc Stub Generator 11\obj\Debug\JScript vsdoc Stub Generator 11.pdb
+C:\Users\Mikey\Documents\Projects\JScript vsdoc Stub Generator 11\JScript vsdoc Stub Generator 11\obj\Debug\extension.vsixmanifest
