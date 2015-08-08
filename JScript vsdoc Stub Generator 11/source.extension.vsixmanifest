@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
   <Metadata>
@@ -19,3 +20,26 @@
     <Asset Type="Microsoft.VisualStudio.VsPackage" d:Source="Project" d:ProjectName="JScriptStubOptions" Path="|JScriptStubOptions;PkgdefProjectOutputGroup|" />
   </Assets>
 </PackageManifest>
+=======
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
+  <Metadata>
+    <Identity Id="JScript_vsdoc_Stub_Generator_11..954b6985-5b74-4ae8-9614-425728636053" Version="2.0.5" Language="en-US" Publisher="Michael Obermeyer, Jr." />
+    <DisplayName>DocStubsJs</DisplayName>
+    <Description xml:space="preserve">This is a simple extension that auto-generates documentation comment stubs for JavaScript and TypeScript.</Description>
+    <License>GNU.txt</License>
+    <PreviewImage>vsdocExtensionScreen2.PNG</PreviewImage>
+    <Tags>Documentation, Javascript, vsdoc, xml comments, Intellisense, jscript</Tags>
+  </Metadata>
+  <Installation>
+    <InstallationTarget Id="Microsoft.VisualStudio.Pro" Version="[11.0,14.0]" />
+  </Installation>
+  <Dependencies>
+    <Dependency d:Source="Project" d:ProjectName="JScriptStubOptions" DisplayName="|JScriptStubOptions;VSIXNameProjectOutputGroup|" Id="|JScriptStubOptions;VSIXIdentifierProjectOutputGroup|" d:InstallSource="Embed" Location="|JScriptStubOptions;VSIXContainerProjectOutputGroup|" d:VsixSubPath="JScriptStubOptions" />
+  </Dependencies>
+  <Assets>
+    <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="%CurrentProject%" Path="|%CurrentProject%|" />
+    <Asset Type="Microsoft.VisualStudio.VsPackage" d:Source="Project" d:ProjectName="JScriptStubOptions" Path="|JScriptStubOptions;PkgdefProjectOutputGroup|" />
+  </Assets>
+</PackageManifest>
+>>>>>>> 1d689470fce015793f32596ac1c61907e5babd4e
