@@ -1,9 +1,18 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 11
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JScript vsdoc Stub Generator 11", "JScript vsdoc Stub Generator 11\JScript vsdoc Stub Generator 11.csproj", "{065A983A-E2F6-47AC-B1D1-8ED71C85E9D5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JScriptStubOptions", "JScriptStubOptions\JScriptStubOptions.csproj", "{9DD70AD0-4868-4308-8651-DC2D30C48F9D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TestFiles", "TestFiles", "{0AEBB462-EBF3-4684-A752-F57136BAB8CF}"
+	ProjectSection(SolutionItems) = preProject
+		TestFiles\HtmlPage.html = TestFiles\HtmlPage.html
+		TestFiles\JavaScript1.js = TestFiles\JavaScript1.js
+		TestFiles\Page.aspx = TestFiles\Page.aspx
+		TestFiles\TypeScript1.ts = TestFiles\TypeScript1.ts
+		TestFiles\View.cshtml = TestFiles\View.cshtml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
