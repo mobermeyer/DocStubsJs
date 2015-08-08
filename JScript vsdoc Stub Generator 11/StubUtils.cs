@@ -14,8 +14,6 @@ namespace JScript_vsdoc_Stub_Generator_11
         public static readonly Regex returnRegex = new Regex("return ");
         public static readonly Regex javaScriptFnRegex = new Regex(@"function(\(|\s)");
 
-        // Currently, this regex could give some false-positives. Ex: { someProp: (a * b) };
-        public static readonly Regex typeScriptFnRegex = new Regex(@":\s?\([a-z_$]", RegexOptions.IgnoreCase | RegexOptions.Compiled);
         public static readonly ReturnOptions Options = new ReturnOptions();
 
         public static string GetLineTextFromPosition(int position, ITextSnapshot snapshot)
@@ -61,9 +59,9 @@ namespace JScript_vsdoc_Stub_Generator_11
             }
         }
 
-        private static bool IsFunctionLine(string lineText, bool isTypeScript)
+        private static bool IsJSFunctionLine(string lineText)
         {
-            return javaScriptFnRegex.IsMatch(lineText) || (isTypeScript && typeScriptFnRegex.IsMatch(lineText));
+            return javaScriptFnRegex.IsMatch(lineText);
         }
 
         /// <summary>
@@ -79,14 +77,24 @@ namespace JScript_vsdoc_Stub_Generator_11
             string lineText = capture.GetLineFromLineNumber(lineNumber).GetText();
             string unCommentedLine = RemoveComments(lineText);
             
-            //Ignore inline functions if the is an "inside-the-function" doc (i.e, vsdoc)
+            //Ignore inline functions if this is an "inside-the-function" doc (i.e, vsdoc)
             if (!isAboveFunction && !unCommentedLine.Trim().EndsWith("{")) return -1;
 
-            var isTypeScript = capture.ContentType.TypeName == "TypeScript";
-            //Find the function declaration related to the {
+            if (capture.ContentType.TypeName == "TypeScript")
+            {
+                return GetTypeScriptFunctionLine(capture, lineNumber, isAboveFunction, lineText);
+            }
+            else
+            {
+                return GetJavaScriptFunctionLine(capture, lineNumber, isAboveFunction, lineText);
+            }
+        }
+
+        private static int GetJavaScriptFunctionLine(ITextSnapshot capture, int lineNumber, bool isAboveFunction, string lineText)
+        {
             if (!isAboveFunction)
             {
-                while (!IsFunctionLine(lineText, isTypeScript))
+                while (!IsJSFunctionLine(lineText))
                 {
                     lineNumber--;
                     lineText = capture.GetLineFromLineNumber(lineNumber).Extent.GetText();
@@ -94,9 +102,76 @@ namespace JScript_vsdoc_Stub_Generator_11
                     if (lineText.Contains("{")) return -1;
                 }
             }
-            else if (!IsFunctionLine(lineText, isTypeScript)) { return -1; }
+            else if (!IsJSFunctionLine(lineText)) { return -1; }
 
             return lineNumber;
+        }
+
+        private static readonly Regex hasMatchingParens = new Regex(@"\(.*\)");
+        private static readonly Regex whitespace = new Regex(@"\s");
+        private static Regex keywordWithParen = new Regex(@"(if|else if|while|for)\(");
+        public static readonly Regex typeScriptFnRegex = new Regex(@":\s?\([a-z_$]", RegexOptions.IgnoreCase | RegexOptions.Compiled);
+
+        // This function could use some refinement as it will return some false positives,
+        // but hopefully they are rare enough to not cause any major issues. I would much 
+        // rather return a couple false positives than false negatives.
+        private static int GetTypeScriptFunctionLine(ITextSnapshot capture, int lineNumber, bool isAboveFunction, string lineText)
+        {
+            if (!isAboveFunction)
+            {
+                while (!lineText.Contains('(') && !typeScriptFnRegex.IsMatch(lineText))
+                {
+                    lineNumber--;
+                    lineText = capture.GetLineFromLineNumber(lineNumber).Extent.GetText();
+                    //There is no function declaration associated with the curly brace.
+                    if (lineText.Contains('{')) return -1;
+                }
+
+                return lineNumber;
+            }
+            else
+            {
+                if (typeScriptFnRegex.IsMatch(lineText)) { return lineNumber; }
+
+                var textToCloseParen = lineText;
+
+                // Though we are looking for a ), we need to break the loop if we find either { or },
+                // because it could be the start of an object, class, or something else.
+                var checkBreakLoop = new Regex(@"\)|\{|\}");
+
+                // At this point, we know the given lineNumber is what we want to return as long
+                // as it starts on a valid function declaration, so we create a separate counter.
+                var lineCounter = lineNumber;
+                while (!checkBreakLoop.IsMatch(lineText))
+                {
+                    lineCounter++;
+                    lineText = capture.GetLineFromLineNumber(lineCounter).Extent.GetText();
+                    textToCloseParen += lineText;
+                }
+
+                whitespace.Replace(textToCloseParen, "");
+                if (!hasMatchingParens.IsMatch(textToCloseParen) || keywordWithParen.IsMatch(textToCloseParen)) 
+                {
+                    return -1;
+                }
+
+                var textToOpenBracket = textToCloseParen.Substring(textToCloseParen.IndexOf(')') + 1);
+                while (!lineText.Contains('{'))
+                {
+                    lineCounter++;
+                    lineText = capture.GetLineFromLineNumber(lineCounter).Extent.GetText();
+                    textToOpenBracket += lineText;
+                }
+
+                textToOpenBracket = textToOpenBracket.Substring(0, textToOpenBracket.LastIndexOf('{'));
+                // If there is no text between the ) and {, then we know it is a valid function header.
+                if (String.IsNullOrWhiteSpace(textToOpenBracket)) { return lineNumber; }
+
+                // If there is text between ) {, check if it is a return type declaration.
+                if (textToOpenBracket.Trim().StartsWith(":")) { return lineNumber; }
+
+                return -1;
+            }
         }
 
         /// <summary>

@@ -148,3 +148,13 @@ C:\Users\Mikey\AppData\Local\Microsoft\VisualStudio\11.0Exp\Extensions\Michael O
 C:\Users\Mikey\AppData\Local\Microsoft\VisualStudio\11.0Exp\Extensions\Michael Obermeyer, Jr\DocStubsJs\2.0.4\\JScriptStubOptions.vsix
 C:\Users\Mikey\AppData\Local\Microsoft\VisualStudio\11.0Exp\Extensions\Michael Obermeyer, Jr\DocStubsJs\2.0.4\\JScript vsdoc Stub Generator 11.pdb
 C:\Users\Mikey\AppData\Local\Microsoft\VisualStudio\11.0Exp\Extensions\Michael Obermeyer, Jr\DocStubsJs\2.0.4\\JScriptStubOptions.pdb
+C:\Users\Mikey\AppData\Local\Microsoft\VisualStudio\11.0Exp\Extensions\Michael Obermeyer, Jr\DocStubsJs\2.1.0\\JScript vsdoc Stub Generator 11.dll
+C:\Users\Mikey\AppData\Local\Microsoft\VisualStudio\11.0Exp\Extensions\Michael Obermeyer, Jr\DocStubsJs\2.1.0\\JScriptStubOptions.dll
+C:\Users\Mikey\AppData\Local\Microsoft\VisualStudio\11.0Exp\Extensions\Michael Obermeyer, Jr\DocStubsJs\2.1.0\\Microsoft.VisualStudio.Settings.11.0.dll
+C:\Users\Mikey\AppData\Local\Microsoft\VisualStudio\11.0Exp\Extensions\Michael Obermeyer, Jr\DocStubsJs\2.1.0\\extension.vsixmanifest
+C:\Users\Mikey\AppData\Local\Microsoft\VisualStudio\11.0Exp\Extensions\Michael Obermeyer, Jr\DocStubsJs\2.1.0\\GNU.txt
+C:\Users\Mikey\AppData\Local\Microsoft\VisualStudio\11.0Exp\Extensions\Michael Obermeyer, Jr\DocStubsJs\2.1.0\\vsdocExtensionScreen2.PNG
+C:\Users\Mikey\AppData\Local\Microsoft\VisualStudio\11.0Exp\Extensions\Michael Obermeyer, Jr\DocStubsJs\2.1.0\\JScriptStubOptions.pkgdef
+C:\Users\Mikey\AppData\Local\Microsoft\VisualStudio\11.0Exp\Extensions\Michael Obermeyer, Jr\DocStubsJs\2.1.0\\JScriptStubOptions.vsix
+C:\Users\Mikey\AppData\Local\Microsoft\VisualStudio\11.0Exp\Extensions\Michael Obermeyer, Jr\DocStubsJs\2.1.0\\JScript vsdoc Stub Generator 11.pdb
+C:\Users\Mikey\AppData\Local\Microsoft\VisualStudio\11.0Exp\Extensions\Michael Obermeyer, Jr\DocStubsJs\2.1.0\\JScriptStubOptions.pdb
