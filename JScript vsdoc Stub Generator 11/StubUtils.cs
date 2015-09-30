@@ -34,9 +34,14 @@ namespace JScript_vsdoc_Stub_Generator_11
             else { lineNum--; }
 
             lineNum = GetFunctionDeclarationLineNumber(capture, lineNum, isAboveFunction);
-            string space = capture.GetLineFromLineNumber(lineNum).GetText();
-            int leadingSpace = space.Length - space.TrimStart().Length;
-            space = space.Substring(0, leadingSpace);
+            string space = "";
+
+            if(lineNum >= 0)
+            {
+                space = capture.GetLineFromLineNumber(lineNum).GetText();
+                int leadingSpace = space.Length - space.TrimStart().Length;
+                space = space.Substring(0, leadingSpace);
+            }
 
             if (isAboveFunction) { return space; }
 
@@ -201,7 +206,7 @@ namespace JScript_vsdoc_Stub_Generator_11
                 return text;
         }
 
-        public static string[] GetFunctionParameters(int position, ITextSnapshot capture, bool isAboveFunction = false)
+        public static string[] GetFunctionParameters(int position, ITextSnapshot capture, bool isAboveFunction = true)
         {
             int openFunctionLine = capture.GetLineNumberFromPosition(position - 1);
             if (isAboveFunction)
