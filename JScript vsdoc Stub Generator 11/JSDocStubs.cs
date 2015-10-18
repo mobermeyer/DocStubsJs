@@ -18,13 +18,22 @@ namespace JScript_vsdoc_Stub_Generator_11
         const string SUMMARY_CLOSE = "</summary>";
         string tabs = "";
         private const string errorMsgPrefix = "JScript vsdoc Stub Generator has encountered an error:\n";
+        private string contentType = string.Empty;
 
         public JSDocStubs(IWpfTextView view)
         {
             _view = view;
             this.editor = _view.TextBuffer;
+            
             //Listen for text changed event.
             this.editor.Changed += OnTextChanged;
+
+            // Store the content type name.
+            this.contentType = this.editor.ContentType.TypeName;
+
+            // Pass content type name to StubUtils for further usage.
+            // For example, for generating parameter type tag of JavaScript content type, we should not depend on ":" syntax.
+            StubUtils.ContentTypeName = this.contentType;
         }
 
         //Microsoft.VisualStudio.Text.Impl
@@ -81,8 +90,17 @@ namespace JScript_vsdoc_Stub_Generator_11
                         if ((line.Start.Position + asteriskIndex) > change.OldEnd)
                             return;
 
+                        int tabsStopIndex = -1;
                         int openingSlashIndex = lineText.IndexOf('/');
-                        int tabsStopIndex = asteriskIndex > openingSlashIndex ? openingSlashIndex : asteriskIndex;
+                        if (openingSlashIndex.Equals(-1))
+                        {
+                            // There's no slash, it's a jsdoc comment. We need asteriskIndex here.
+                            tabsStopIndex = asteriskIndex;
+                        }
+                        else
+                        {
+                            tabsStopIndex = asteriskIndex > openingSlashIndex ? openingSlashIndex : asteriskIndex;
+                        }
 
                         string newTabs = tabsStopIndex >= 0 ? lineText.Substring(0, tabsStopIndex) : "";
                         editor.Replace(change.NewSpan, Environment.NewLine + newTabs + "* ");
@@ -181,7 +199,15 @@ namespace JScript_vsdoc_Stub_Generator_11
             bool shouldCreate = StubUtils.ShouldCreateReturnTag(position, this._view.TextSnapshot, true);
 
             if (shouldCreate)
+            {
                 result = NewLine() + "@returns";
+
+                if (contentType.Equals("JavaScript"))
+                {
+                    // Add {type} for JavaScript doc.
+                    result += " {type} ";
+                }
+            }
 
             return result;
         }

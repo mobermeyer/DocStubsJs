@@ -1,16 +1,16 @@
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011">
   <Metadata>
-    <Identity Id="JScript_vsdoc_Stub_Generator_11..954b6985-5b74-4ae8-9614-425728636053" Version="1.4.1" Language="en-US" Publisher="Michael Obermeyer, Jr." />
-    <DisplayName>JScript vsdoc Stub Generator 2012</DisplayName>
-    <Description xml:space="preserve">This is a simple extension that auto-generates vsdoc comments for JavaScript when completing a triple-slash, similar to other languages in Visual Studio 2012.</Description>
+    <Identity Id="JScript_vsdoc_Stub_Generator_11..954b6985-5b74-4ae8-9614-425728636053" Version="2.1.0" Language="en-US" Publisher="Michael Obermeyer, Jr." />
+    <DisplayName>DocStubsJs</DisplayName>
+    <Description xml:space="preserve">This is a simple extension that auto-generates documentation comment stubs for JavaScript and TypeScript.</Description>
+    <License>GNU.txt</License>
     <PreviewImage>vsdocExtensionScreen2.PNG</PreviewImage>
     <Tags>Documentation, Javascript, vsdoc, xml comments, Intellisense, jscript</Tags>
   </Metadata>
   <Installation>
-    <InstallationTarget Id="Microsoft.VisualStudio.Pro" Version="[11.0,13.0]" />
+    <InstallationTarget Id="Microsoft.VisualStudio.Pro" Version="[11.0,14.0]" />
   </Installation>
   <Dependencies>
-    <Dependency Id="Microsoft.Framework.NDP" DisplayName="Microsoft .NET Framework" Version="4.5" />
     <Dependency DisplayName="JScriptStubOptions" Id="5faf6911-0879-4057-adc1-b8c9575af159" Location="JScriptStubOptions.vsix" />
   </Dependencies>
   <Assets>

@@ -16,6 +16,21 @@ namespace JScript_vsdoc_Stub_Generator_11
 
         public static readonly ReturnOptions Options = new ReturnOptions();
 
+        private static string contentTypeName = string.Empty;
+
+        public static string ContentTypeName
+        {
+            get
+            {
+                return contentTypeName;
+            }
+
+            set
+            {
+                contentTypeName = value;
+            }
+        }
+
         public static string GetLineTextFromPosition(int position, ITextSnapshot snapshot)
         {
             return snapshot.GetLineFromPosition(position - 1).GetText();
@@ -291,8 +306,8 @@ namespace JScript_vsdoc_Stub_Generator_11
 
             if (lineNumber == -1) { return false; }
 
-            int functionsOpen = 1;
-            int openBracket = 1;
+            int functionsOpen = 0;
+            int openBracket = 0;
 
             for (int i = lineNumber; i < capture.LineCount; i++)
             {
@@ -357,7 +372,10 @@ namespace JScript_vsdoc_Stub_Generator_11
                         break;
                     }
                     else if (returnRegex.IsMatch(lineText))
+                    {
                         isInlineFunction = true;
+                    }
+                        
                     //Decrements both the number of open brackets and functions if they are equal.
                     //This means the number of open brackets are the same as the number of open functions.
                     //Otherwise it just decrements the number of open brackets.
@@ -424,7 +442,16 @@ namespace JScript_vsdoc_Stub_Generator_11
         /// <returns></returns>
         public static string GetParamType(string paramDefinition)
         {
-            if (!paramDefinition.Contains(':')) { return null; }
+            if (StubUtils.contentTypeName.Equals("JavaScript"))
+            {
+                // For JavaScript file, we all always generate a param type: {type}.
+                return "type";
+            }
+
+            if (!paramDefinition.Contains(':'))
+            {
+                return null;
+            }
 
             return paramDefinition.Split(':')[1].Trim();
         }
