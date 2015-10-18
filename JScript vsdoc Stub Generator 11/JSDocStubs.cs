@@ -91,18 +91,14 @@ namespace JScript_vsdoc_Stub_Generator_11
                             return;
 
                         int tabsStopIndex = -1;
-                        int openingSlashIndex = lineText.IndexOf('/');
-                        if (openingSlashIndex.Equals(-1))
+                        if (asteriskIndex >= 0 || lineText.Contains("/**"))
                         {
-                            // There's no slash, it's a jsdoc comment. We need asteriskIndex here.
+                            // There's no slash, or its open-comment line, so it's a jsdoc comment. We need asteriskIndex here.
                             tabsStopIndex = asteriskIndex;
-                        }
-                        else
-                        {
-                            tabsStopIndex = asteriskIndex > openingSlashIndex ? openingSlashIndex : asteriskIndex;
                         }
 
                         string newTabs = tabsStopIndex >= 0 ? lineText.Substring(0, tabsStopIndex) : "";
+                        newTabs = newTabs.Replace('/', ' ');
                         editor.Replace(change.NewSpan, Environment.NewLine + newTabs + "* ");
                         editor.Apply();
                     }
