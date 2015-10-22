@@ -20,15 +20,8 @@ namespace JScript_vsdoc_Stub_Generator_11
 
         public static string ContentTypeName
         {
-            get
-            {
-                return contentTypeName;
-            }
-
-            set
-            {
-                contentTypeName = value;
-            }
+            get { return contentTypeName; }
+            set { contentTypeName = value; }
         }
 
         public static string GetLineTextFromPosition(int position, ITextSnapshot snapshot)
@@ -306,6 +299,7 @@ namespace JScript_vsdoc_Stub_Generator_11
 
             if (lineNumber == -1) { return false; }
 
+            // If vsdoc (inside function) we need to initialize to 1 to account for the function we are currently attempting to document.
             int functionsOpen = 0;
             int openBracket = 0;
 
@@ -338,7 +332,7 @@ namespace JScript_vsdoc_Stub_Generator_11
                 //END COMMENT HANDLING
 
                 //HANDLE BRACKETS - "{ }"
-                if (javaScriptFnRegex.IsMatch(lineText) && lineText.Contains("{"))
+                if (i == lineNumber || javaScriptFnRegex.IsMatch(lineText))
                 {
                     //adds an open function and an open bracket.
                     functionsOpen++;
