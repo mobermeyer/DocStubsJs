@@ -16,6 +16,17 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JScript vsdoc Stub Generato
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JScriptStubOptions", "JScriptStubOptions\JScriptStubOptions.csproj", "{9DD70AD0-4868-4308-8651-DC2D30C48F9D}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "vsix_targets", "vsix_targets", "{F6EFD70E-1A4C-46A9-BD32-F63F88E62354}"
+	ProjectSection(SolutionItems) = preProject
+		vsix_targets\Microsoft.VsSDK.Build.Tasks.dll = vsix_targets\Microsoft.VsSDK.Build.Tasks.dll
+		vsix_targets\Microsoft.VsSDK.Common.props = vsix_targets\Microsoft.VsSDK.Common.props
+		vsix_targets\Microsoft.VsSDK.Common.targets = vsix_targets\Microsoft.VsSDK.Common.targets
+		vsix_targets\Microsoft.VsSDK.Cpp.Overrides.targets = vsix_targets\Microsoft.VsSDK.Cpp.Overrides.targets
+		vsix_targets\Microsoft.VsSDK.Cpp.targets = vsix_targets\Microsoft.VsSDK.Cpp.targets
+		vsix_targets\Microsoft.VsSDK.targets = vsix_targets\Microsoft.VsSDK.targets
+		vsix_targets\ProjectItemsSchema.xml = vsix_targets\ProjectItemsSchema.xml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
