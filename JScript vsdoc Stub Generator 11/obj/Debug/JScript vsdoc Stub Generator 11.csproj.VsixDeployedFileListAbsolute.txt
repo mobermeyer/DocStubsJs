@@ -1,9 +1,0 @@
-C:\Users\web-front\AppData\Local\Microsoft\VisualStudio\14.0Exp\Extensions\Michael Obermeyer, Jr\DocStubsJs\2.1.0\\JScript vsdoc Stub Generator 11.dll
-C:\Users\web-front\AppData\Local\Microsoft\VisualStudio\14.0Exp\Extensions\Michael Obermeyer, Jr\DocStubsJs\2.1.0\\JScriptStubOptions.dll
-C:\Users\web-front\AppData\Local\Microsoft\VisualStudio\14.0Exp\Extensions\Michael Obermeyer, Jr\DocStubsJs\2.1.0\\extension.vsixmanifest
-C:\Users\web-front\AppData\Local\Microsoft\VisualStudio\14.0Exp\Extensions\Michael Obermeyer, Jr\DocStubsJs\2.1.0\\GNU.txt
-C:\Users\web-front\AppData\Local\Microsoft\VisualStudio\14.0Exp\Extensions\Michael Obermeyer, Jr\DocStubsJs\2.1.0\\vsdocExtensionScreen2.PNG
-C:\Users\web-front\AppData\Local\Microsoft\VisualStudio\14.0Exp\Extensions\Michael Obermeyer, Jr\DocStubsJs\2.1.0\\JScriptStubOptions.pkgdef
-C:\Users\web-front\AppData\Local\Microsoft\VisualStudio\14.0Exp\Extensions\Michael Obermeyer, Jr\DocStubsJs\2.1.0\\JScriptStubOptions.vsix
-C:\Users\web-front\AppData\Local\Microsoft\VisualStudio\14.0Exp\Extensions\Michael Obermeyer, Jr\DocStubsJs\2.1.0\\JScript vsdoc Stub Generator 11.pdb
-C:\Users\web-front\AppData\Local\Microsoft\VisualStudio\14.0Exp\Extensions\Michael Obermeyer, Jr\DocStubsJs\2.1.0\\JScriptStubOptions.pdb

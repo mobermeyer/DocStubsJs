@@ -1,4 +1,0 @@
-C:\Users\web-front\AppData\Local\Microsoft\VisualStudio\14.0Exp\Extensions\Michael Obermeyer, Jr\JScriptStubOptions\1.0\\JScriptStubOptions.dll
-C:\Users\web-front\AppData\Local\Microsoft\VisualStudio\14.0Exp\Extensions\Michael Obermeyer, Jr\JScriptStubOptions\1.0\\JScriptStubOptions.pkgdef
-C:\Users\web-front\AppData\Local\Microsoft\VisualStudio\14.0Exp\Extensions\Michael Obermeyer, Jr\JScriptStubOptions\1.0\\extension.vsixmanifest
-C:\Users\web-front\AppData\Local\Microsoft\VisualStudio\14.0Exp\Extensions\Michael Obermeyer, Jr\JScriptStubOptions\1.0\\JScriptStubOptions.pdb

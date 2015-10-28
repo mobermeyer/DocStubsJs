@@ -17,8 +17,8 @@ x64/
 x86/
 build/
 bld/
-bin
-obj
+bin/
+obj/
 
 # Visual Studo 2015 cache/options directory
 .vs/
