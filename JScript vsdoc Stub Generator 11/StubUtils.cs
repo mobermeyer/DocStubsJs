@@ -140,43 +140,39 @@ namespace JScript_vsdoc_Stub_Generator_11
             else
             {
                 if (typeScriptFnRegex.IsMatch(lineText)) { return lineNumber; }
+                if (keywordWithParen.IsMatch(lineText)) { return -1; }
+                
+                var line = capture.GetLineFromLineNumber(lineNumber);
+                var parenOpen = lineText.IndexOf("(");
+                var parenBlock = GetCompleteParenBlock(capture, lineNumber, line.Start + lineText.IndexOf("("));
+                if (parenBlock == null) { return -1; }
 
-                var textToCloseParen = lineText;
+                // add one because GetCompleteParenBlock excludes closing parenthesis.
+                var endParamsPosition = line.Start.Position + parenOpen + parenBlock.Length + 1;
 
-                // Though we are looking for a ), we need to break the loop if we find either { or },
-                // because it could be the start of an object, class, or something else.
-                var checkBreakLoop = new Regex(@"\)|\{|\}");
+                var lineEnd = capture.GetLineFromPosition(endParamsPosition);
+                var startTextAfterParams = endParamsPosition + 1;
+                var textAfterParams = capture.GetText(startTextAfterParams, lineEnd.End.Position - startTextAfterParams);
+                var lineCounter = lineEnd.LineNumber;
 
-                // At this point, we know the given lineNumber is what we want to return as long
-                // as it starts on a valid function declaration, so we create a separate counter.
-                var lineCounter = lineNumber;
-                while (!checkBreakLoop.IsMatch(lineText))
+                while (!lineText.Contains('{') && lineCounter < capture.LineCount)
                 {
                     lineCounter++;
                     lineText = capture.GetLineFromLineNumber(lineCounter).Extent.GetText();
-                    textToCloseParen += lineText;
+                    textAfterParams += lineText;
                 }
 
-                whitespace.Replace(textToCloseParen, "");
-                if (!hasMatchingParens.IsMatch(textToCloseParen) || keywordWithParen.IsMatch(textToCloseParen)) 
+                if (!lineText.Contains('{'))
                 {
                     return -1;
                 }
 
-                var textToOpenBracket = textToCloseParen.Substring(textToCloseParen.IndexOf(')') + 1);
-                while (!lineText.Contains('{'))
-                {
-                    lineCounter++;
-                    lineText = capture.GetLineFromLineNumber(lineCounter).Extent.GetText();
-                    textToOpenBracket += lineText;
-                }
-
-                textToOpenBracket = textToOpenBracket.Substring(0, textToOpenBracket.LastIndexOf('{'));
+                textAfterParams = textAfterParams.Substring(0, textAfterParams.LastIndexOf('{'));
                 // If there is no text between the ) and {, then we know it is a valid function header.
-                if (String.IsNullOrWhiteSpace(textToOpenBracket)) { return lineNumber; }
+                if (String.IsNullOrWhiteSpace(textAfterParams)) { return lineNumber; }
 
                 // If there is text between ) {, check if it is a return type declaration.
-                if (textToOpenBracket.Trim().StartsWith(":")) { return lineNumber; }
+                if (textAfterParams.Trim().StartsWith(":")) { return lineNumber; }
 
                 return -1;
             }
@@ -222,59 +218,91 @@ namespace JScript_vsdoc_Stub_Generator_11
             }
 
             ITextSnapshotLine line = capture.GetLineFromLineNumber(openFunctionLine);
-            string prevLine = line.Extent.GetText();
+            string curLine = line.Extent.GetText();
             openFunctionLine = StubUtils.GetFunctionDeclarationLineNumber(capture, openFunctionLine, isAboveFunction);
             //Not immediately after a function declaration
             if (openFunctionLine == -1) return new string[0];
 
-            prevLine = capture.GetLineFromLineNumber(openFunctionLine).GetText();
+            curLine = capture.GetLineFromLineNumber(openFunctionLine).GetText();
 
-            int ftnIndex = StubUtils.javaScriptFnRegex.Match(prevLine).Index;
+            int ftnIndex = StubUtils.javaScriptFnRegex.Match(curLine).Index;
             int firstParenPosition = -1;
-            if (prevLine.IndexOf('(', ftnIndex) > -1)
+            if (curLine.IndexOf('(', ftnIndex) > -1)
             {
                 firstParenPosition = capture.GetLineFromLineNumber(openFunctionLine).Start +
-                                 prevLine.IndexOf('(', ftnIndex) + 1;
+                                 curLine.IndexOf('(', ftnIndex) + 1;
             }
             else
             {
                 do
                 {
                     openFunctionLine++;
-                    prevLine = capture.GetLineFromLineNumber(openFunctionLine).GetText();
-                } while (!prevLine.Contains("("));
+                    curLine = capture.GetLineFromLineNumber(openFunctionLine).GetText();
+                } while (!curLine.Contains("("));
 
                 firstParenPosition = capture.GetLineFromLineNumber(openFunctionLine).Start
-                                     + prevLine.IndexOf('(')
+                                     + curLine.IndexOf('(')
                                      + 1;
             }
 
-            int lastParenPosition = -1;
-            if (prevLine.IndexOf(')') > 0)
+            var parenBlock = GetCompleteParenBlock(capture, openFunctionLine, firstParenPosition);
+            if (parenBlock == null)
             {
-                lastParenPosition = capture.GetLineFromLineNumber(openFunctionLine).Start
-                                    + prevLine.IndexOf(')', prevLine.IndexOf('('));
-            }
-            else
-            {
-                do
-                {
-                    openFunctionLine++;
-                    prevLine = capture.GetLineFromLineNumber(openFunctionLine).GetText();
-                } while (!prevLine.Contains(")"));
-
-                lastParenPosition = capture.GetLineFromLineNumber(openFunctionLine).Start +
-                                        prevLine.IndexOf(")");
+                return new string[0];
             }
 
-
-            return StubUtils
-                .RemoveComments(capture
-                    .GetText()
-                    .Substring(firstParenPosition, (lastParenPosition - firstParenPosition)))
+            parenBlock = RemoveComments(parenBlock);
+            return parenBlock
                 .Split(',')
                 .Select(param => param.Trim())
                 .ToArray();
+        }
+
+        /// <summary>
+        /// Returns a parenthetical block of code, excluding the parentheses. Returns null if there is no complete block.
+        /// </summary>
+        /// <param name="capture"></param>
+        /// <param name="startLine">The line the parenthetical block starts.</param>
+        /// <param name="openParenPosition">The position in the ITextSnapshot of the first open parenthesis.</param>
+        /// <returns></returns>
+        private static string GetCompleteParenBlock(ITextSnapshot capture, int startLine, int openParenPosition)
+        {
+            int lastParenPosition = -1;
+            var openParens = 0;
+            var curLineNumber = startLine;
+            while (lastParenPosition < 0 && curLineNumber < capture.LineCount)
+            {
+                var curLine = capture.GetLineFromLineNumber(curLineNumber).GetText();
+                for (var i = 0; i < curLine.Length; i++)
+                {
+                    var c = curLine[i];
+                    if (c == '(')
+                    {
+                        openParens++;
+                    }
+                    else if (c == ')')
+                    {
+                        openParens--;
+                        if (openParens == 0)
+                        {
+                            lastParenPosition = capture.GetLineFromLineNumber(curLineNumber).Start + i;
+                            break;
+                        }
+                    }
+                }
+
+                curLineNumber++;
+            }
+
+            if (lastParenPosition == -1)
+            {
+                // no matching parens found - return no params
+                return null;
+            }
+
+            return capture
+                    .GetText()
+                    .Substring(openParenPosition, (lastParenPosition - openParenPosition));
         }
 
         public static bool ShouldCreateReturnTag(int position, ITextSnapshot capture, bool isAboveFunction = false)
