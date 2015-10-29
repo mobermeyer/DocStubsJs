@@ -162,12 +162,10 @@ namespace JScript_vsdoc_Stub_Generator_11
             var parameters = StubUtils.GetFunctionParameters(position, this._view.TextSnapshot, true);
             var result = "";
 
-            foreach (string param in parameters)
+            foreach (var param in parameters)
             {
-                string name = StubUtils.GetParamName(param);
-                string type = StubUtils.GetParamType(param);
-                if (!String.IsNullOrEmpty(name))
-                    result += NewLine() + createParamString(name, type);
+                if (!String.IsNullOrEmpty(param.Name))
+                    result += NewLine() + createParamString(param.Name, param.Type);
             }
 
             return result;

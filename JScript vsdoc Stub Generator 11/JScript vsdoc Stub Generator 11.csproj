@@ -72,6 +72,7 @@
     <Compile Include="JSDocStubs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StubUtils.cs" />
+    <Compile Include="Symbols\Parameter.cs" />
     <Compile Include="VSDocStubs.cs" />
   </ItemGroup>
   <ItemGroup>

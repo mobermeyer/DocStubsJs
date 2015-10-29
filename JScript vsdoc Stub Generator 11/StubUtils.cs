@@ -1,4 +1,5 @@
-﻿using JScriptStubOptions;
+﻿using JScript_vsdoc_Stub_Generator_11.Symbols;
+using JScriptStubOptions;
 using Microsoft.VisualStudio.Text;
 using System;
 using System.Collections.Generic;
@@ -205,7 +206,7 @@ namespace JScript_vsdoc_Stub_Generator_11
                 return text;
         }
 
-        public static string[] GetFunctionParameters(int position, ITextSnapshot capture, bool isAboveFunction = false)
+        public static Parameter[] GetFunctionParameters(int position, ITextSnapshot capture, bool isAboveFunction = false)
         {
             int openFunctionLine = capture.GetLineNumberFromPosition(position - 1);
             if (isAboveFunction)
@@ -221,7 +222,7 @@ namespace JScript_vsdoc_Stub_Generator_11
             string curLine = line.Extent.GetText();
             openFunctionLine = StubUtils.GetFunctionDeclarationLineNumber(capture, openFunctionLine, isAboveFunction);
             //Not immediately after a function declaration
-            if (openFunctionLine == -1) return new string[0];
+            if (openFunctionLine == -1) return new Parameter[0];
 
             curLine = capture.GetLineFromLineNumber(openFunctionLine).GetText();
 
@@ -248,13 +249,22 @@ namespace JScript_vsdoc_Stub_Generator_11
             var parenBlock = GetCompleteParenBlock(capture, openFunctionLine, firstParenPosition);
             if (parenBlock == null)
             {
-                return new string[0];
+                return new Parameter[0];
             }
 
             parenBlock = RemoveComments(parenBlock);
             return parenBlock
                 .Split(',')
-                .Select(param => param.Trim())
+                .Select(param =>
+                {
+                    var result = Parameter.Parse(param);
+                    if (StubUtils.contentTypeName.Equals("JavaScript"))
+                    {
+                        result.Type = "type";
+                    }
+
+                    return result;
+                })
                 .ToArray();
         }
 
@@ -443,39 +453,6 @@ namespace JScript_vsdoc_Stub_Generator_11
             if (found == false) { return -1; }
 
             return lineNumber;
-        }
-
-        /// <summary>
-        /// Returns the param name from the given parameter definition regardless of whether it is for JavaScript or TypeScript.
-        /// </summary>
-        /// <param name="paramDefinition"></param>
-        /// <returns></returns>
-        public static string GetParamName(string paramDefinition)
-        {
-            if (!paramDefinition.Contains(':')) { return paramDefinition; }
-
-            return paramDefinition.Split(':')[0].Trim();
-        }
-
-        /// <summary>
-        /// Returns the param type from the given parameter definition. If it is not found, returns null.
-        /// </summary>
-        /// <param name="paramDefinition"></param>
-        /// <returns></returns>
-        public static string GetParamType(string paramDefinition)
-        {
-            if (StubUtils.contentTypeName.Equals("JavaScript"))
-            {
-                // For JavaScript file, we all always generate a param type: {type}.
-                return "type";
-            }
-
-            if (!paramDefinition.Contains(':'))
-            {
-                return null;
-            }
-
-            return paramDefinition.Split(':')[1].Trim();
         }
     }
 }
