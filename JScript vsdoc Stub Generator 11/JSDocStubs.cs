@@ -134,8 +134,9 @@ namespace JScript_vsdoc_Stub_Generator_11
                     string summaryString = StubUtils.Options.MultiLineSummary ? NewLine() : "";
                     string parameters = getFunctionParameters(position);
                     string returnTag = getReturnTag(position);
-                    string commentBody = summaryString + parameters + returnTag;
+                    string commentBody = summaryString + StubUtils.CaretPlaceholder + parameters + returnTag;
                     string autoComment = this.tabs + "/**" + commentBody;
+
                     if (!String.IsNullOrEmpty(commentBody))
                     {
                         autoComment += Environment.NewLine + this.tabs;
@@ -144,9 +145,13 @@ namespace JScript_vsdoc_Stub_Generator_11
                     autoComment += " */";
 
                     int lineStart = this._view.TextSnapshot.GetLineFromPosition(position).Start.Position;
+                    var caretPosition = autoComment.IndexOf(StubUtils.CaretPlaceholder);
+                    autoComment = autoComment.Replace(StubUtils.CaretPlaceholder, "");
+
                     Span firstLineSpan = new Span(lineStart, change.NewSpan.End - lineStart);
                     editor.Replace(firstLineSpan, autoComment);
-                    ITextSnapshotLine prevLine = this._view.TextSnapshot.GetLineFromPosition(position);
+
+                    StubUtils.MoveCaretAfterChange(this._view, this.editor, lineStart + caretPosition);
 
                     var after = editor.Apply();
                 }
@@ -156,6 +161,11 @@ namespace JScript_vsdoc_Stub_Generator_11
                 }
             }
         }
+
+        private void MoveCaret(object sender, TextContentChangedEventArgs e)
+        {
+        }
+
 
         private string getFunctionParameters(int position)
         {

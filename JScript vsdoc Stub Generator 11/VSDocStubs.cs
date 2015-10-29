@@ -110,9 +110,14 @@ namespace JScript_vsdoc_Stub_Generator_11
                     string autoComment = summaryTag + parameters + returnTag;
 
                     int lineStart = this._view.TextSnapshot.GetLineFromPosition(position).Start.Position;
+                    var caretPosition = autoComment.IndexOf(StubUtils.CaretPlaceholder);
                     Span firstLineSpan = new Span(lineStart, change.NewSpan.End - lineStart);
+                    autoComment = autoComment.Replace(StubUtils.CaretPlaceholder, "");
+
                     editor.Replace(firstLineSpan, autoComment);
                     ITextSnapshotLine prevLine = this._view.TextSnapshot.GetLineFromPosition(position);
+
+                    StubUtils.MoveCaretAfterChange(this._view, this.editor, lineStart + caretPosition);
 
                     var after = editor.Apply();
                 }
@@ -129,7 +134,11 @@ namespace JScript_vsdoc_Stub_Generator_11
 
             if (StubUtils.Options.MultiLineSummary)
             {
-                result += NewLine() + NewLine();
+                result += NewLine() + StubUtils.CaretPlaceholder + NewLine();
+            }
+            else
+            {
+                result += StubUtils.CaretPlaceholder;
             }
 
             result += SUMMARY_CLOSE;

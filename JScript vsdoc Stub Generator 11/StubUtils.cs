@@ -1,6 +1,7 @@
 ﻿using JScript_vsdoc_Stub_Generator_11.Symbols;
 using JScriptStubOptions;
 using Microsoft.VisualStudio.Text;
+using Microsoft.VisualStudio.Text.Editor;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,6 +17,7 @@ namespace JScript_vsdoc_Stub_Generator_11
         public static readonly Regex javaScriptFnRegex = new Regex(@"function(\(|\s)");
 
         public static readonly ReturnOptions Options = new ReturnOptions();
+        public const string CaretPlaceholder = "^";
 
         private static string contentTypeName = string.Empty;
 
@@ -454,5 +456,19 @@ namespace JScript_vsdoc_Stub_Generator_11
 
             return lineNumber;
         }
+
+        public static void MoveCaretAfterChange(IWpfTextView view, ITextBuffer editor, int caretPosition)
+        {
+            EventHandler moveCaret = null;
+            moveCaret = (o, e) =>
+            {
+                var point = new SnapshotPoint(view.TextSnapshot, caretPosition);
+                view.Caret.MoveTo(point);
+                editor.PostChanged -= moveCaret;
+            };
+
+            editor.PostChanged += moveCaret;
+        }
+
     }
 }
