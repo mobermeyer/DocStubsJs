@@ -150,8 +150,7 @@ namespace JScript_vsdoc_Stub_Generator_11
                 var parenBlock = GetCompleteParenBlock(capture, lineNumber, line.Start + lineText.IndexOf("("));
                 if (parenBlock == null) { return -1; }
 
-                // add one because GetCompleteParenBlock excludes closing parenthesis.
-                var endParamsPosition = line.Start.Position + parenOpen + parenBlock.Length + 1;
+                var endParamsPosition = line.Start.Position + parenOpen + parenBlock.Length;
 
                 var lineEnd = capture.GetLineFromPosition(endParamsPosition);
                 var startTextAfterParams = endParamsPosition + 1;
